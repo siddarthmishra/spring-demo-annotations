@@ -3,21 +3,19 @@ package com.luv2code.springdemo;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-//Explicit Bean ID is thatSillyCoach
-// @Component("thatSillyCoach")
 @Component
 
 // annotation for lazy-init="true"
 @Lazy
-public class TennisCoach implements Coach {
+public class PingPongCoach implements Coach {
 
-	TennisCoach() {
-		System.out.println("Constructor : TennisCoach");
+	PingPongCoach() {
+		System.out.println("Constructor : PingPongCoach");
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		return "Practice your backhand volley";
+		return "Practice your pingpong drop shot";
 	}
 
 }
