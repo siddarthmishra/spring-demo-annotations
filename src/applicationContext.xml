@@ -8,7 +8,11 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- add entry to enable component scanning -->
-	<context:component-scan
-		base-package="com.luv2code.springdemo" />
+	<!-- <context:component-scan base-package="com.luv2code.springdemo" /> -->
+
+	<!-- "context:component-scan" scans base package and all its sub-package.
+		Here com is a base package and luv2code and springdemo are its sub-package.
+		Either of above one or below one, both works fine -->
+	<context:component-scan base-package="com" />
 
 </beans>
