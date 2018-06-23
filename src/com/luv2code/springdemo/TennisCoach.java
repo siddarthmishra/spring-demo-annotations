@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Lazy
 public class TennisCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 
 	public TennisCoach() {
@@ -30,11 +31,11 @@ public class TennisCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}*/
 
-	@Autowired
+	/*@Autowired
 	public void doSomeCrazyStuff(FortuneService fortuneService) {
 		System.out.println("TennisCoach : Inside doSomeCrazyStuff() method");
 		this.fortuneService = fortuneService;
-	}
+	}*/
 
 	@Override
 	public String getDailyWorkout() {
