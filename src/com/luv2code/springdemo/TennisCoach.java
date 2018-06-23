@@ -17,6 +17,10 @@ public class TennisCoach implements Coach {
 	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 
+	@Autowired
+	@Qualifier("customizedRandomService")
+	private FortuneService randomFortuneService;
+
 	public TennisCoach() {
 		System.out.println("Constructor : TennisCoach");
 	}
@@ -44,9 +48,14 @@ public class TennisCoach implements Coach {
 		return "Practice your backhand volley";
 	}
 
-	@Override
+	/*@Override
 	public String getDailyFortune() {
 		return fortuneService.getDailyFortune();
+	}*/
+	
+	@Override
+	public String getDailyFortune() {
+		return randomFortuneService.getDailyFortune();
 	}
 
 }
