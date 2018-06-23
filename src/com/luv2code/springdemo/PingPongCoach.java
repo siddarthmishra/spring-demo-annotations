@@ -18,4 +18,10 @@ public class PingPongCoach implements Coach {
 		return "Practice your pingpong drop shot";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
