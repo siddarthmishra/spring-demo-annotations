@@ -14,11 +14,11 @@ public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
 
-	public TennisCoach() {
+	/*public TennisCoach() {
 		System.out.println("Constructor : TennisCoach");
-	}
+	}*/
 
-	@Autowired
+	// @Autowired
 	public TennisCoach(FortuneService fortuneService) {
 		System.out.println("Arg-Constructor : TennisCoach");
 		this.fortuneService = fortuneService;
