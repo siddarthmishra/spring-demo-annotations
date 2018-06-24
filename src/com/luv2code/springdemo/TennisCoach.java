@@ -2,6 +2,7 @@ package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +18,15 @@ public class TennisCoach implements Coach {
 	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 
-	// @Autowired
-	// @Qualifier("customizedRandomService")
+	@Autowired
+	@Qualifier("customizedRandomService")
 	private FortuneService randomFortuneService;
+
+	@Value("${email}")
+	private String email;
+
+	@Value("${team}")
+	private String team;
 
 	public TennisCoach() {
 		System.out.println("Constructor : TennisCoach");
@@ -31,11 +38,11 @@ public class TennisCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}*/
 
-	@Autowired
+	/*@Autowired
 	public TennisCoach(@Qualifier("customizedRandomService") FortuneService fortuneService) {
 		System.out.println("Arg-Constructor with Autowired and Qualifier Annotation: TennisCoach");
 		randomFortuneService = fortuneService;
-	}
+	}*/
 
 	/*@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
@@ -62,6 +69,14 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return randomFortuneService.getDailyFortune();
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
 	}
 
 }

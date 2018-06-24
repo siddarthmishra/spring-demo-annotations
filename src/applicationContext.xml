@@ -7,6 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- load the properties file: sport.properties -->
+	<context:property-placeholder
+		location="classpath:sport.properties" />
+
 	<!-- add entry to enable component scanning -->
 	<!-- <context:component-scan base-package="com.luv2code.springdemo" /> -->
 
@@ -14,5 +18,6 @@
 		Here com is a base package and luv2code and springdemo are its sub-package.
 		Either of above one or below one, both works fine -->
 	<context:component-scan base-package="com" />
+
 
 </beans>
