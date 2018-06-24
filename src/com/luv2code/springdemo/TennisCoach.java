@@ -17,8 +17,8 @@ public class TennisCoach implements Coach {
 	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 
-	@Autowired
-	@Qualifier("customizedRandomService")
+	// @Autowired
+	// @Qualifier("customizedRandomService")
 	private FortuneService randomFortuneService;
 
 	public TennisCoach() {
@@ -30,6 +30,12 @@ public class TennisCoach implements Coach {
 		System.out.println("Arg-Constructor : TennisCoach");
 		this.fortuneService = fortuneService;
 	}*/
+
+	@Autowired
+	public TennisCoach(@Qualifier("customizedRandomService") FortuneService fortuneService) {
+		System.out.println("Arg-Constructor with Autowired and Qualifier Annotation: TennisCoach");
+		randomFortuneService = fortuneService;
+	}
 
 	/*@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
