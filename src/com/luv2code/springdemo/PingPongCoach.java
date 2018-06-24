@@ -1,5 +1,7 @@
 package com.luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +10,10 @@ import org.springframework.stereotype.Component;
 // annotation for lazy-init="true"
 @Lazy
 public class PingPongCoach implements Coach {
+
+	@Autowired
+	@Qualifier("fileRandomFortuneService")
+	private FortuneService fileRandomFortuneService;
 
 	PingPongCoach() {
 		System.out.println("Constructor : PingPongCoach");
@@ -20,8 +26,7 @@ public class PingPongCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return fileRandomFortuneService.getDailyFortune();
 	}
 
 }

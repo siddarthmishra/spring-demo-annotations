@@ -14,6 +14,7 @@ public class PracticeAnnotationDemo {
 
 		// call the method
 		System.out.println(pingPongCoach.getDailyWorkout());
+		System.out.println(pingPongCoach.getDailyFortune());
 
 		// close the context
 		context.close();
