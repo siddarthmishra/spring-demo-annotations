@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class FileRandomFortuneService implements FortuneService {
 
+	public FileRandomFortuneService() {
+		System.out.println("Constructor : FileRandomFortuneService");
+	}
+
 	@Override
 	public String getDailyFortune() {
 		List<String> fortune = getFileFortune();

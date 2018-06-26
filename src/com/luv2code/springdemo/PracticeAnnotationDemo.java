@@ -9,6 +9,15 @@ public class PracticeAnnotationDemo {
 		// load the spring config file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+		String[] beanNames = context.getBeanDefinitionNames();
+
+		// display bean names and classes
+		for (String beanName : beanNames) {
+			String beanClass = context.getBean(beanName).getClass().toString();
+
+			System.out.println(beanName + " : " + beanClass);
+		}
+
 		// retrieve the bean from spring container
 		Coach pingPongCoach = context.getBean("pingPongCoach", Coach.class);
 
