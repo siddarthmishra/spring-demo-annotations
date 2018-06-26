@@ -12,8 +12,20 @@ import org.springframework.stereotype.Component;
 public class PingPongCoach implements Coach {
 
 	@Autowired
-	@Qualifier("fileRandomFortuneService")
 	private FortuneService fileRandomFortuneService;
+
+	/*@Autowired
+	public PingPongCoach(FortuneService fileRandomFortuneService) {
+		System.out.println("Arg - Constructor : PingPongCoach");
+		this.fileRandomFortuneService = fileRandomFortuneService;
+	}*/
+
+	/*@Autowired
+	public void setFileRandomFortuneService(FortuneService fileRandomFortuneService) {
+		System.out.println("PingPongCoach : Inside setFileRandomFortuneService() method");
+		this.fileRandomFortuneService = fileRandomFortuneService;
+	}*/
+
 
 	PingPongCoach() {
 		System.out.println("Constructor : PingPongCoach");
