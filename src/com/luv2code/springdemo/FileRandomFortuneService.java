@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class FileRandomFortuneService implements FortuneService {
 
 	public FileRandomFortuneService() {
-		System.out.println("Constructor : FileRandomFortuneService");
+		System.out.println("No-Arg Constructor : FileRandomFortuneService");
 	}
 
 	@Override
