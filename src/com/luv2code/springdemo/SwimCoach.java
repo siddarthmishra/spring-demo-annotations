@@ -1,8 +1,16 @@
 package com.luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class SwimCoach implements Coach {
 
 	private FortuneService sadFortuneService;
+
+	@Value("${email}")
+	private String email;
+
+	@Value("${team}")
+	private String team;
 
 	public SwimCoach() {
 		System.out.println("No-Arg Constructor : SwimCoach");
@@ -11,6 +19,14 @@ public class SwimCoach implements Coach {
 	public SwimCoach(FortuneService sadFortuneService) {
 		System.out.println("Arg Constructor : SwimCoach");
 		this.sadFortuneService = sadFortuneService;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
 	}
 
 	@Override
