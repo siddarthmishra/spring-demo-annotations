@@ -27,4 +27,14 @@ public class SportConfigBean {
 		System.out.println("Inside Bean swimCoach() of SportConfigBean");
 		return new SwimCoach(sadFortuneService());
 	}
+
+	/*
+	 * If you are using Spring 4.2 and lower, you will need to add the code below
+	 * for Injecting Values from properties file
+	 */
+	// add support to resolve ${...} properties
+	/* @Bean
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceHolderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	} */
 }
